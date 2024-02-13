@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "movies",
   "info": {
-    "name": "Movies"
+    "name": "Movies",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -11,8 +12,55 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "tittle": {
+    "title": {
+      "type": "string",
+      "unique": true
+    },
+    "releaseDate": {
       "type": "string"
+    },
+    "releaseYear": {
+      "type": "string"
+    },
+    "reviews": {
+      "collection": "review"
+    },
+    "casts": {
+      "collection": "cast"
+    },
+    "genres": {
+      "via": "movies",
+      "collection": "genre"
+    },
+    "embed_link": {
+      "type": "string"
+    },
+    "original_title": {
+      "type": "string"
+    },
+    "about": {
+      "type": "text"
+    },
+    "reviewsCount": {
+      "type": "biginteger",
+      "default": "0"
+    },
+    "ratings": {
+      "type": "json"
+    },
+    "averageRating": {
+      "type": "integer",
+      "default": 0
+    },
+    "thumbnails": {
+      "type": "json"
+    },
+    "embed_id": {
+      "type": "string"
+    },
+    "youtube_embed": {
+      "type": "boolean",
+      "default": true
     }
   }
 }

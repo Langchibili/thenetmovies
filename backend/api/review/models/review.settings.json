@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "reviews",
+  "info": {
+    "name": "Review",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "rating": {
+      "type": "integer"
+    },
+    "reviewBody": {
+      "type": "text"
+    },
+    "movie": {
+      "model": "movies"
+    },
+    "reviewer": {
+      "plugin": "users-permissions",
+      "model": "permission"
+    }
+  }
+}
